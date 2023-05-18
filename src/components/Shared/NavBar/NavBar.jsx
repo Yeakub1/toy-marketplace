@@ -10,7 +10,7 @@ export default function NavBar() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex ">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <div className="navbar-start ml-0">
-            <Link>
+            <Link to='/'>
               <h2 className="w-16">
                 <img src={logo} alt="" draggable="false" />
               </h2>
@@ -61,7 +61,7 @@ export default function NavBar() {
         >
           <ul className="items-center justify-center text-lg space-y-8 md:flex md:space-x-6 md:space-y-0">
             <li className="">
-              <Link>Home</Link>
+              <Link to='/'>Home</Link>
             </li>
             <li className="">
               <Link>Blog</Link>
@@ -82,7 +82,10 @@ export default function NavBar() {
         >
           <ul className="items-center justify-center text-lg space-y-8 md:flex md:space-x-6 md:space-y-0 ">
             <li>
-              <Link>LogIn</Link>
+              <Link to='/login'>LogIn</Link>
+            </li>
+            <li>
+              <Link to='/register'>Register</Link>
             </li>
           </ul>
         </div>

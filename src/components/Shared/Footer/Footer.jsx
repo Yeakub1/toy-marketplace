@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="w-full bg-base-300">
         <footer className="mx-auto lg:max-w-7xl mt-20 grid lg:grid-cols-4 px-4 justify-between footer py-5">
           <div className="">
-            <img className="w-40" src={logo} alt="" />
+            <img className="w-40" src={logo} alt="" draggable='false'/>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem
               aliquid, aspernatur dolorum laudantium earum ratione quos.
@@ -54,7 +54,7 @@ const Footer = () => {
             </li>
             <li href="" className="text-lg flex">
               <p className="text-slate-500 mr-3">Email:</p>{" "}
-              <p> demo@Yourstore.com</p>
+              <p> toy@info.com</p>
             </li>
           </div>
         </footer>
