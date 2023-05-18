@@ -8,7 +8,7 @@ const Login = () => {
     <div className="login-bg w-6/12 mx-auto mt-2">
       <div className="w-7/12 mx-auto flex items-center ">
         <div className="mt-5 w-full">
-          <h1 className="text-4xl font-bold text-center ">Login</h1>
+          <h1 className="text-4xl font-bold text-center text-primary">Login</h1>
           <form>
             <div className="mt-5">
               <label htmlFor="">Email:</label>
