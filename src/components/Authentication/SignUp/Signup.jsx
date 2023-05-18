@@ -3,12 +3,28 @@ import "../Login/login.css";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const from = event.target;
+    const name = from.name.value;
+    const email = from.email.value;
+      const password = from.password.value;
+      const photo = from.photo.value;
+    const loged = { name, email, password, photo };
+    console.log(loged);
+
+  };
+
+
+
   return (
     <div className="login-bg w-6/12 mx-auto mt-2">
       <div className="w-7/12 mx-auto flex items-center ">
         <div className="mt-2 w-full">
-          <h1 className="text-4xl font-bold text-center text-primary">Register</h1>
-          <form>
+          <h1 className="text-4xl font-bold text-center text-primary">
+            Register
+          </h1>
+          <form onSubmit={handleRegister}>
             <div className="mt-3">
               <label htmlFor="">Name:</label>
               <input
