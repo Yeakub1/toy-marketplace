@@ -17,7 +17,7 @@ const Login = () => {
 
 
   return (
-      <div className="login-bg w-6/12 mx-auto mt-2">
+      <div className="login-bg lg:w-6/12 mx-auto mt-2">
         <div className="w-7/12 mx-auto flex items-center ">
           <div className="mt-5 w-full">
             <h1 className="text-4xl font-bold text-center text-primary">
@@ -85,7 +85,7 @@ const Login = () => {
                 src="https://img.icons8.com/color/48/google-logo.png"
                 alt="google-logo"
               />
-              <p>Sign In Width Google</p>
+              <p>Sign In With Google</p>
             </button>
 
             <p className="text-sm font-light mt-3 text-gray-500 dark:text-gray-400">

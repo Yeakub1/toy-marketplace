@@ -18,7 +18,7 @@ const SignUp = () => {
 
 
   return (
-    <div className="login-bg w-6/12 mx-auto mt-2">
+    <div className="login-bg lg:w-6/12 mx-auto mt-2">
       <div className="w-7/12 mx-auto flex items-center ">
         <div className="mt-2 w-full">
           <h1 className="text-4xl font-bold text-center text-primary">
