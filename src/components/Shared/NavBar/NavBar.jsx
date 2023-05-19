@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../.././../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 export default function NavBar() {
+  const { user, logOut } = useContext(AuthContext);
   const [navbar, setNavbar] = useState(false);
 
+  const handleLogOut = () => {
+    logOut()
+      .then(result => { })
+      .catch(error => console.log(error))
+  }
   return (
     <nav className="w-full bg-white shadow ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex ">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <div className="navbar-start ml-0">
-            <Link to='/'>
+            <Link to="/">
               <h2 className="w-16">
                 <img src={logo} alt="" draggable="false" />
               </h2>
@@ -61,13 +68,13 @@ export default function NavBar() {
         >
           <ul className="items-center justify-center text-lg space-y-8 md:flex md:space-x-6 md:space-y-0">
             <li className="">
-              <Link to='/'>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="">
-              <Link>Blog</Link>
+              <Link to="/blog">Blogs</Link>
             </li>
             <li className="">
-              <Link>About US</Link>
+              <Link> All Toys</Link>
             </li>
             <li className="">
               <Link>Contact US</Link>
@@ -81,11 +88,26 @@ export default function NavBar() {
           }`}
         >
           <ul className="items-center justify-center text-lg space-y-8 md:flex md:space-x-6 md:space-y-0 ">
+            {user?.email ? (
+              <>
+                <li>
+                  <Link className="mr-4" to="/bookings">
+                    My bookings
+                  </Link>
+                </li>
+
+                <li>
+                  <button onClick={handleLogOut}>Log out</button>
+                </li>
+                <li>
+                  
+                </li>
+              </>
+            ) : (
+              <Link to="/login">LogIn</Link>
+            )}
             <li>
-              <Link to='/login'>LogIn</Link>
-            </li>
-            <li>
-              <Link to='/register'>Register</Link>
+              <Link to="/register"></Link>
             </li>
           </ul>
         </div>

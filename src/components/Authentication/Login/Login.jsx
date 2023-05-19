@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const froms = location.state?.from?.pathname || '/';
+
       const handleLogin = (event) => {
         event.preventDefault();
         const from = event.target;
         const email = from.email.value;
         const password = from.password.value;
-        
         const userLogin = { email, password };
-          console.log(userLogin);
+        console.log(userLogin);
+        
+        signIn(email, password)
+          .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            from.reset();
+            navigate(froms,{replace: true})
+          })
+          .catch(error => {
+          console.log(error);
+        })
       };
 
+ 
 
 
   return (
