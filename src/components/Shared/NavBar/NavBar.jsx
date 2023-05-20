@@ -74,6 +74,11 @@ export default function NavBar() {
             <li className="">
               <Link to="/blog">Blogs</Link>
             </li>
+            <li>
+              <Link className="mr-3" to="/alltoys">
+                All Toys
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -86,13 +91,14 @@ export default function NavBar() {
             {user?.email ? (
               <>
                 <li>
-                  <Link className="mr-3" to="/alltoys">
-                    All Toys
+                  <Link className="mr-3" to="/addtoy">
+                    Add Toy
                   </Link>
                 </li>
+
                 <li>
-                  <Link className="mr-3" to="/addtoy">
-                    Add A Toy
+                  <Link className="mr-3" to="/mytoy">
+                    My Toys
                   </Link>
                 </li>
 

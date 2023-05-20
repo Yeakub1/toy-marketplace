@@ -50,8 +50,8 @@ const SignUp = () => {
                 type="text"
                 name="name"
                 placeholder="Your Name"
+                required
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                
               />
             </div>
             <div className="mt-5">
@@ -59,9 +59,9 @@ const SignUp = () => {
               <input
                 type="email"
                 name="email"
+                required
                 placeholder="Your Email Address"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                
               />
             </div>
             <div className="mt-5">
@@ -69,9 +69,9 @@ const SignUp = () => {
               <input
                 type="password"
                 name="password"
+                required
                 placeholder="Your Password"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                
               />
             </div>
             <div className="mt-5">
@@ -79,9 +79,9 @@ const SignUp = () => {
               <input
                 type="text"
                 name="photo"
+                required
                 placeholder="Your Photo Url"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                
               />
             </div>
 
@@ -92,7 +92,6 @@ const SignUp = () => {
                   aria-describedby="terms"
                   type="checkbox"
                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                  
                 />
               </div>
               <div className="ml-3 text-sm">
