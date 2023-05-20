@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
 
 
 
@@ -23,6 +23,13 @@ const SignUp = () => {
       .then(result => {
         const loggedUsr = result.user;
         console.log(loggedUsr);
+
+        // phoot and name
+       updateUser(name, photo)
+         .then(() => {})
+         .catch((error) => console.log("an error occuered", error));
+       
+        from.reset();
     })
       .catch(error => {
       console.log(error);
@@ -45,7 +52,7 @@ const SignUp = () => {
                 name="name"
                 placeholder="Your Name"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                required
+                
               />
             </div>
             <div className="mt-5">
@@ -55,7 +62,7 @@ const SignUp = () => {
                 name="email"
                 placeholder="Your Email Address"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                required
+                
               />
             </div>
             <div className="mt-5">
@@ -65,7 +72,7 @@ const SignUp = () => {
                 name="password"
                 placeholder="Your Password"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                required
+                
               />
             </div>
             <div className="mt-5">
@@ -75,7 +82,7 @@ const SignUp = () => {
                 name="photo"
                 placeholder="Your Photo Url"
                 className="py-2 bg-slate-200 rounded-md border-0 w-full  px-2"
-                required
+                
               />
             </div>
 
@@ -86,7 +93,7 @@ const SignUp = () => {
                   aria-describedby="terms"
                   type="checkbox"
                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                  required=""
+                  
                 />
               </div>
               <div className="ml-3 text-sm">

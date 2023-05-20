@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import logo from "../.././../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import './Navbar.css'
 
 export default function NavBar() {
+  const [data, setData] = useState(null);
   const { user, logOut } = useContext(AuthContext);
   const [navbar, setNavbar] = useState(false);
 
@@ -99,13 +101,24 @@ export default function NavBar() {
                 <li>
                   <button onClick={handleLogOut}>Log out</button>
                 </li>
-                <li>
-                  
-                </li>
+
+                <Link
+                  to="/user-profile"
+                  className="hover-text h-10 w-10 ml-4 cursor-pointer"
+                >
+                  <img
+                    className="w-full h-full rounded-full"
+                    src={user?.photoURL}
+                  />
+                  <span className="tooltip-text" id="left">
+                    {user?.displayName}
+                  </span>
+                </Link>
               </>
             ) : (
               <Link to="/login">LogIn</Link>
             )}
+
             <li>
               <Link to="/register"></Link>
             </li>
