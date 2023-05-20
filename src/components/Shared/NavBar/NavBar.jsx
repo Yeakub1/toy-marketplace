@@ -5,7 +5,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import './Navbar.css'
 
 export default function NavBar() {
-  const [data, setData] = useState(null);
   const { user, logOut } = useContext(AuthContext);
   const [navbar, setNavbar] = useState(false);
 
@@ -75,12 +74,6 @@ export default function NavBar() {
             <li className="">
               <Link to="/blog">Blogs</Link>
             </li>
-            <li className="">
-              <Link> All Toys</Link>
-            </li>
-            <li className="">
-              <Link>Contact US</Link>
-            </li>
           </ul>
         </div>
 
@@ -93,8 +86,13 @@ export default function NavBar() {
             {user?.email ? (
               <>
                 <li>
-                  <Link className="mr-4" to="/bookings">
-                    My bookings
+                  <Link className="mr-3" to="/alltoys">
+                    All Toys
+                  </Link>
+                </li>
+                <li>
+                  <Link className="mr-3" to="/addtoy">
+                    Add A Toy
                   </Link>
                 </li>
 

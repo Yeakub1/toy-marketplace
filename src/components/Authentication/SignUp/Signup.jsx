@@ -3,10 +3,9 @@ import "../Login/login.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
+import { toast } from "react-hot-toast";
 const SignUp = () => {
   const { createUser, updateUser } = useContext(AuthContext);
-
-
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -28,8 +27,8 @@ const SignUp = () => {
        updateUser(name, photo)
          .then(() => {})
          .catch((error) => console.log("an error occuered", error));
-       
-        from.reset();
+         from.reset();
+         toast.success("Successfully register!");
     })
       .catch(error => {
       console.log(error);
