@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import AllToys from "./AllToys";
+import UpdateToys from "./UpdateToys";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -82,6 +83,9 @@ const MyToys = () => {
                 handleUpdate={handleUpdate}
               ></AllToys>
             ))}
+
+             
+            
           </tbody>
         </table>
       </div>

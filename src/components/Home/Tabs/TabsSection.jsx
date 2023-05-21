@@ -1,8 +1,13 @@
-import React  from 'react';
+import React, { useEffect }  from 'react';
 import { Tab, Tabs, TabPanel,} from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const TabsSection = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="max-w-7xl px-4 mx-auto">
       <Tabs>
@@ -24,7 +29,7 @@ const TabsSection = () => {
           </Tab>
         </div>
 
-        <TabPanel>
+        <TabPanel data-aos="flip-left">
           <div className="lg:flex justify-between gap-5 w-8/12 mx-auto">
             <div className="lg:w-6/12 mt-2">
               <img

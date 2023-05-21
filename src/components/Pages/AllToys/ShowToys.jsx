@@ -21,7 +21,7 @@ const ShowToys = ({ toy, handleToyDetails }) => {
       <td>{quantity}</td>
 
       <td>
-        <Link to={`/toydetails/${_id}`}>
+        <Link to={`/toyDetails/${_id}`}>
           <button className="px-4 py-2 bg-blue-700 text-white rounded-md">
             View Details
           </button>

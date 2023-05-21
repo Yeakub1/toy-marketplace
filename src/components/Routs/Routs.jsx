@@ -46,10 +46,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/toydetails/:_id",
+        path: "toyDetails/:id",
         element: <ToyDetails></ToyDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/alltoy/${params._id}`),
+          fetch(`http://localhost:5000/alltoy/${params.id}`),
       },
 
       {

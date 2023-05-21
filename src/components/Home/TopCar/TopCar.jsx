@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '../../../assets/images/top1.png'
 import img2 from '../../../assets/images/top2.png'
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 
 const TopCar = () => {
+   useEffect(() => {
+     Aos.init();
+   }, []);
     return (
-      <div className=" mt-20 ">
-        <h1 className='text-center text-xl'>TOP PRODUCTS</h1>
+      <div className=" mt-20 " data-aos="zoom-in">
+        <h1 className="text-center text-xl">TOP PRODUCTS</h1>
         <div className="max-w-7xl px-4 mx-auto mt-5 lg:flex justify-between gap-10">
           <div className="lg:w-6/12 flex justify-center items-center">
             <div className="">
-              <img className="lg:w-8/12" src={img1} alt="" draggable='false' />
+              <img className="lg:w-8/12" src={img1} alt="" draggable="false" />
             </div>
             <div className="">
               <h1 className="text-2xl font-bold uppercase">Ride On Cars</h1>
@@ -19,7 +25,7 @@ const TopCar = () => {
           </div>
           <div className="lg:w-6/12 flex justify-center items-center">
             <div className="">
-              <img className="lg:w-8/12" src={img2} alt="" draggable='false' />
+              <img className="lg:w-8/12" src={img2} alt="" draggable="false" />
             </div>
             <div className="">
               <h1 className="text-2xl font-bold uppercase">PowerFull Moters</h1>
