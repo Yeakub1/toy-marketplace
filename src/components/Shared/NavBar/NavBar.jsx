@@ -3,6 +3,7 @@ import logo from "../.././../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import './Navbar.css'
+import { Helmet } from "react-helmet";
 
 export default function NavBar() {
   const { user, logOut } = useContext(AuthContext);
@@ -19,8 +20,9 @@ export default function NavBar() {
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <div className="navbar-start ml-0">
             <Link to="/">
-              <h2 className="w-16">
-                <img src={logo} alt="" draggable="false" />
+              <h2 className="flex w-96 items-center">
+                <img className="w-16" src={logo} alt="" draggable="false" />
+                <p className="font-bold text-3xl">Toy Kids</p>
               </h2>
             </Link>
           </div>
@@ -74,6 +76,8 @@ export default function NavBar() {
             <li className="">
               <Link to="/blog">Blogs</Link>
             </li>
+            
+
             <li>
               <Link className="mr-3" to="/alltoys">
                 All Toys
