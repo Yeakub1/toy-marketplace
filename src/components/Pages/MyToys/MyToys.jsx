@@ -6,6 +6,7 @@ import AllToys from "./AllToys";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  const [searchToy, setSearchToy] = useState('');
 
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys/${user?.email}`)
@@ -14,7 +15,12 @@ const MyToys = () => {
         setToys(data);
       });
   }, [user]);
-    
+
+  const handleSerchToy = () => {
+    fetch(`http://localhost:5000/toyserch/${searchToy}`)
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  };
       const handleDelete = (_id) => {
         Swal.fire({
           title: "Are you sure?",
@@ -54,11 +60,14 @@ const MyToys = () => {
     <div className="max-w-7xl px-4 mx-auto">
       <div className=" p-2 text-center mt-5 mb-8">
         <input
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => setSearchToy(e.target.value)}
           type="text"
           className="py-2 bg-slate-200 rounded-md"
         />{" "}
-        <button className="px-4 py-2 bg-blue-800 text-white rounded-md">
+        <button
+          onClick={handleSerchToy}
+          className="px-4 py-2 bg-blue-800 text-white rounded-md"
+        >
           Search
         </button>
       </div>

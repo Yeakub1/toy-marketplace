@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user} = useContext(AuthContext);
     const {
       register,
       handleSubmit,
-      
   } = useForm();
   
 
@@ -22,7 +22,14 @@ const AddToy = () => {
       .then(res => res.json())
       .then(result => {
         console.log(result);
-        
+         if (result.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Add Toy your Services",
+            icon: "success",
+            confirmButtonText: "Okay",
+          });
+        }
     })
     };
 
@@ -38,7 +45,7 @@ const AddToy = () => {
               </label>
               <input
                 className="px-10 py-3 bg-slate-100 ps-2 text-base rounded-md "
-                {...register("name")}
+                {...register("title")}
                 placeholder="Your name"
                 type="text"
                 required

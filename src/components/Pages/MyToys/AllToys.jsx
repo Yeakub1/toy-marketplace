@@ -2,7 +2,7 @@ import React from 'react';
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 const AllToys = ({ toy, handleDelete }) => {
-  const { _id, image, name, selleremail, price, rating } = toy;
+  const { _id, image, title, selleremail, price, rating } = toy;
   return (
     <tr>
       <th></th>
@@ -14,7 +14,7 @@ const AllToys = ({ toy, handleDelete }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{name}</div>
+            <div className="font-bold">{title}</div>
           </div>
         </div>
       </td>
