@@ -64,7 +64,7 @@ const AddToy = () => {
               />
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 g">
               <label className="text-2xl" htmlFor="">
                 Seller name:
               </label>
