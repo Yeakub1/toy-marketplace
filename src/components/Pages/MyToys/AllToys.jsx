@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
-const AllToys = ({ toy, handleDelete }) => {
+const AllToys = ({ toy, handleDelete, handleUpdate }) => {
   const { _id, image, title, selleremail, price, rating } = toy;
   return (
     <tr>
@@ -21,7 +21,7 @@ const AllToys = ({ toy, handleDelete }) => {
       <td>{selleremail}</td>
       <td>{rating}</td>
       <td>{price}</td>
-      <td>
+      <td onClick={() => handleUpdate(_id)}>
         <FaEdit />
       </td>
       <td onClick={() => handleDelete(_id)}>
