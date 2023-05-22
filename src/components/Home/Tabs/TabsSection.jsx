@@ -13,7 +13,7 @@ const TabsSection = () => {
       <Tabs>
         <div className="flex justify-center">
           <Tab className="px-4 py-2 mb-2 active rounded-md cursor-pointer outline outline-offset-2 outline-1 list-none mr-3">
-            Cars
+            Cars 
           </Tab>
         </div>
 
