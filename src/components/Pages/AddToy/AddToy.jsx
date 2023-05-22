@@ -12,17 +12,17 @@ const AddToy = () => {
   
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addtoy", {
+    fetch("https://toy-server-kappa.vercel.app/addtoy", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-      .then(res => res.json())
-      .then(result => {
+      .then((res) => res.json())
+      .then((result) => {
         console.log(result);
-         if (result.insertedId) {
+        if (result.insertedId) {
           Swal.fire({
             title: "Success!",
             text: "Add Toy your Services",
@@ -30,7 +30,7 @@ const AddToy = () => {
             confirmButtonText: "Okay",
           });
         }
-    })
+      });
     };
 
 

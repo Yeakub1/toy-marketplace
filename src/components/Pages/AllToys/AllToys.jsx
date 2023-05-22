@@ -6,7 +6,7 @@ const AllToys = () => {
   const [searchToy, setSearchToy] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoy")
+    fetch("https://toy-server-kappa.vercel.app/alltoy")
       .then((res) => res.json())
       .then((data) => {
         setToyes(data);
@@ -15,7 +15,7 @@ const AllToys = () => {
 
   // search---
   const handleSerchToy = () => {
-    fetch(`http://localhost:5000/toyserch/${searchToy}`)
+    fetch(`https://toy-server-kappa.vercel.app/toyserch/${searchToy}`)
       .then((res) => res.json())
       .then((data) => setToyes(data));
   };

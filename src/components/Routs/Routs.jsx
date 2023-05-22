@@ -53,7 +53,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/alltoy/${params.id}`),
+          fetch(`https://toy-server-kappa.vercel.app/alltoy/${params.id}`),
       },
 
       {
