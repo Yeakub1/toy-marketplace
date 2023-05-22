@@ -29,7 +29,7 @@ const TabsSection = () => {
           </Tab>
         </div>
 
-        <TabPanel data-aos="flip-left">
+        <TabPanel data-aos="zoom-in">
           <div className="lg:flex justify-between gap-5 w-8/12 mx-auto">
             <div className="lg:w-6/12 mt-2">
               <img
